@@ -1,0 +1,36 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+
+:root {
+  --greyscaleblack-100: rgba(31, 35, 41, 1);
+  --greyscaleblack-80: rgba(141, 147, 157, 1);
+
+  --kor-h-h3-font-family: 'Noto Sans KR', Helvetica;
+  --kor-h-h3-font-size: 16px;
+  --kor-h-h3-font-style: normal;
+  --kor-h-h3-font-weight: 700;
+  --kor-h-h3-letter-spacing: -1.28px;
+  --kor-h-h3-line-height: normal;
+
+  --kor-p-p3-font-family: 'Noto Sans KR', Helvetica;
+  --kor-p-p3-font-size: 13px;
+  --kor-p-p3-font-style: normal;
+  --kor-p-p3-font-weight: 400;
+  --kor-p-p3-letter-spacing: -1.04px;
+  --kor-p-p3-line-height: normal;
+
+  --kor-subtitle-subtitle2-font-family: 'Noto Sans KR', Helvetica;
+  --kor-subtitle-subtitle2-font-size: 14px;
+  --kor-subtitle-subtitle2-font-style: normal;
+  --kor-subtitle-subtitle2-font-weight: 700;
+  --kor-subtitle-subtitle2-letter-spacing: -1.12px;
+  --kor-subtitle-subtitle2-line-height: normal;
+
+  --variable-collection-primary: rgba(255, 144, 120, 1);
+}

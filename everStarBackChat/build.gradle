@@ -1,0 +1,82 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.1'
+	id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'com.b101'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	//jpa
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	//security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	//springboot
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	//lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	//mysql
+	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	// redis
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-cache'
+
+	//valid
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	//jwt
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+
+	// coolsms nurigo 문자인증
+	implementation 'net.nurigo:sdk:4.3.0'
+
+	//kafka
+	implementation 'com.github.danielwegener:logback-kafka-appender:0.1.0'
+	implementation 'net.logstash.logback:logstash-logback-encoder:6.2'
+	implementation 'org.springframework.kafka:spring-kafka'
+
+	// websocket
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+	implementation 'org.webjars:stomp-websocket:2.3.3-1'
+
+	// openvidu
+	implementation 'io.openvidu:openvidu-java-client:2.30.0'
+
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.1' // 버전은 실제 사용하는 Kafka와 호환되는 버전으로 변경
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.15.1'
+	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.1'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

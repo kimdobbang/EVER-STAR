@@ -1,0 +1,10 @@
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .all-\[unset\] {
+    all: unset;
+  }
+}
+:root {
+  --variable-collection-primary: rgba(255, 144, 120, 1);
+}

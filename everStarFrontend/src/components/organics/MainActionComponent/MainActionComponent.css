@@ -1,0 +1,63 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1112px;
+  height: auto;
+  padding: 24px;
+  gap: 16px;
+  position: relative; /* z-index 적용을 위해 relative 위치 설정 */
+  z-index: 50; /* z-index를 앞으로 설정 */
+}
+
+.progress-container,
+.buttons-container {
+  width: 100%;
+  max-width: 540px;
+  margin: 8px 0;
+  height: auto;
+}
+
+.button-group {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+  justify-content: center;
+}
+
+.full-button,
+.equal-width-button {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .main-container {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 90%;
+    margin: auto;
+    padding: 64px;
+    gap: 16px;
+    height: auto;
+  }
+
+  .progress-container,
+  .buttons-container {
+    margin: 0;
+    height: auto;
+    max-width: 520px;
+  }
+}
+
+/* 버튼 및 요소들에 대해 클릭을 방해하지 않도록 z-index 설정 */
+.progress-container,
+.buttons-container {
+  position: relative; /* 클릭을 위해 요소의 위치 설정 */
+}
+
+/* 아이콘에 대한 포인터 이벤트 제거 */
+.pointer-events-none {
+  pointer-events: none;
+}

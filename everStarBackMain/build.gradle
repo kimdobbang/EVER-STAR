@@ -1,0 +1,101 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.1'
+	id 'io.spring.dependency-management' version '1.1.5'
+}
+
+group = 'com'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	//jpa
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+	// Querydsl
+	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
+	annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jakarta"
+	annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+	annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+
+	//security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
+	//springboot
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	implementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+
+	//lombok
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	//mysql
+	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	//valid
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+	// test
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	//jwt
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+
+	//kafka
+	implementation 'com.github.danielwegener:logback-kafka-appender:0.1.0'
+	implementation 'net.logstash.logback:logstash-logback-encoder:6.2'
+
+	// https://mvnrepository.com/artifact/org.json/json
+	implementation group: 'org.json', name: 'json', version: '20231013'
+
+	// aws
+	implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.2.6.RELEASE'
+
+	// coolsms nurigo 문자인증
+	implementation 'net.nurigo:sdk:4.3.0'
+
+	//fcm
+	implementation 'com.google.firebase:firebase-admin:6.8.1'
+
+	// openvidu
+	implementation 'io.openvidu:openvidu-java-client:2.30.0'
+
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.1' // 버전은 실제 사용하는 Kafka와 호환되는 버전으로 변경
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.15.1'
+	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.1'
+
+	// openai
+	implementation 'com.theokanning.openai-gpt3-java:service:0.18.2'
+
+	// badwordfiltering
+	implementation 'io.github.vaneproject:badwordfiltering:1.0.0'
+}
+
+compileJava {
+	options.compilerArgs << '-parameters'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

@@ -1,0 +1,66 @@
+# Java 및 Spring 관련
+*.class
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA 설정
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Maven 및 Gradle
+/.mvn
+!/src/main/resources/
+/target
+/build
+*.log
+
+# Spring Boot 환경 파일
+application.yml
+application-*.yml
+application.properties
+application-*.properties
+*.env
+
+# Lombok 관련
+.lombok/
+
+# OS 관련 파일
+.DS_Store
+Thumbs.db
+
+# 로그 파일 및 임시 파일
+*.log
+*.out
+*.tmp
+
+# React 관련
+node_modules/
+.vscode/
+*.lock
+/build
+
+# 환경 파일
+.env
+.env.local
+.env.development
+.env.production
+
+# Service Worker
+/service-worker.js
+/service-worker.js.map
+/precache-manifest.*.js
+
+# Babel, Webpack
+.babelrc
+.cache/
+*.webpack.js
+*.webpack.config.js
+
+# 테스트 커버리지 및 디버그 파일
+/coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
